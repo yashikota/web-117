@@ -20,7 +20,7 @@ interface TimeAPIResponse {
 }
 
 async function getNTPTime(): Promise<Date> {
-  const url = "https://www.timeapi.io/api/Time/current/zone?timeZone=Asia/Tokyo"
+  const url = "https://www.timeapi.io/api/Time/current/zone?timeZone=UTC"
   const response = await fetch(url)
   const data = await response.json() as TimeAPIResponse
   return new Date(data.dateTime)
